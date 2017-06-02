@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { CursosService } from './cursos/cursos.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
