@@ -1,4 +1,4 @@
-import { AlunosGuard } from './guards/alunos.guard';
+//import { AlunosGuard } from './guards/alunos.guard';
 import { CursosGuard } from './guards/cursos.guard';
 import { AuthGuard } from './guards/auth-guard';
 import { Routes, RouterModule, CanActivate, CanActivateChild } from '@angular/router';
@@ -23,8 +23,8 @@ const appRoutes: Routes = [
     { 
         path: 'alunos', 
         loadChildren: 'app/alunos/alunos.module.ts#AlunosModule',
-        canActivate: [AuthGuard],
-        canActivateChild: [AlunosGuard]
+        canActivate: [AuthGuard]//,
+        //canActivateChild: [AlunosGuard]
     },
     //{ path: 'cursos', component: CursosComponent},
     //{ path: 'curso/:id', component: CursoDetalheComponent},
