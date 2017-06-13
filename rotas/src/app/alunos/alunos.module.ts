@@ -1,3 +1,4 @@
+import { AlunosDeactivateGuard } from './../guards/alunos-deactivate.guard';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -21,7 +22,8 @@ import { AlunosService } from './alunos.service';
         AlunoDetalheComponent
     ],
     providers: [
-        AlunosService
+        AlunosService,
+        AlunosDeactivateGuard
     ]
 })
 export class AlunosModule { }

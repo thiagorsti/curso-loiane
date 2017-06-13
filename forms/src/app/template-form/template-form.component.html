@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <div class="form-group"
     [class.has-error]="!nome.valid && nome.touched"
@@ -41,4 +42,21 @@
   </div>
 
   <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+=======
+<form>
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control"
+      id="nome"
+      placeholder="Nome">
+  </div>
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input type="email" class="form-control"
+      id="email"
+      placeholder="nome@email.com">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+>>>>>>> a91f2f6529531920eec771c00028d881f7d86182
 </form>
