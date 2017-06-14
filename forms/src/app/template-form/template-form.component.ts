@@ -22,6 +22,9 @@ export class TemplateFormComponent implements OnInit {
   onSubmit(form) {
     console.log(form);
     // console.log(this.usuario);
+    //utilizando o resttesttest.com para testar submissão do formulário
+    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))      
+      .subscribe(dados => console.log(dados));
   }
 
   verificaValidTouched(campo) {
