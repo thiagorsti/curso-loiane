@@ -1,6 +1,6 @@
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-data-form',
@@ -22,15 +22,24 @@ export class DataFormComponent implements OnInit {
     //   email: new FormControl(null)
     // });
     this.formulario = this.formBuilder.group({
-      nome: [null],
-      email: [null]
+      nome: [null, [Validators.required, Validators.min(3), Validators.maxLength(20)]],
+      email: [null, [Validators.required, Validators.email]]
     });
   }
 
   onSubmit() {
     console.log(this.formulario.value);
      this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))      
-      .subscribe(dados => console.log(dados));
+      .subscribe(dados => {
+        console.log(dados);
+        //reseta o form
+        this.resetar();
+      },
+      (error:any) => alert('Erro'));
+  }
+
+  resetar() {
+    this.formulario.reset();
   }
 
 }
